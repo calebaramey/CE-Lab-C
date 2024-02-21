@@ -7,7 +7,13 @@ Getting Started
 
 ***Starting Jaeger with Docker***
 
-    docker run -d -p6831:6831/udp -p16686:16686 jaegertracing/all-in-one:latest
+    docker run \
+      --rm \
+      --name jaeger \
+      -p6831:6831/udp \
+      -p16686:16686 \
+      -p14268:14268 \
+      jaegertracing/all-in-one:latest
 
 And, to open the Jaeger UI paste: http://127.0.0.1:16686/ into your browser.
 
@@ -22,5 +28,4 @@ And, to open the Jaeger UI paste: http://127.0.0.1:16686/ into your browser.
         all
         
 To open the UI paste: http://127.0.0.1:8080/ into your browser.
-
 
